@@ -1,7 +1,7 @@
 import cv2
 
 #Read an image from disk 
-image_path='./img.png'
+image_path='./img/salah.jpg'
 original_image = cv2.imread(image_path)
 
 # Check if the image was successfully loaded 
@@ -14,6 +14,11 @@ else:
     # Apply edge detection using the Canny edge detector 
     edges = cv2.Canny(gray_image, 50, 150)
     
+    #Resizing Windows
+    cv2.namedWindow('Original Image', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('Grayscale Image', cv2.WINDOW_NORMAL)
+    cv2.namedWindow('Edge Detection', cv2.WINDOW_NORMAL)
+
     # Display the original and processed images 
     cv2.imshow('Original Image', original_image) 
     cv2.imshow('Grayscale Image', gray_image) 
